@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Add {
+	public static void main (String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		
+		int n1;
+		int n2;
+		
+		system.out.print("Enter first integer: ");
+		n1 = input.nextInt();
+
+		system.out.print("Enter second integer: ");
+		n2 = input.nextInt();
+
+		system.out.printf("Hello, you entered %d and %d.\n", n1, n2);
+
+	}
+}

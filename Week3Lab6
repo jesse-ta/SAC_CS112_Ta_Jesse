@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Calc {
+	public static void main (String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		
+		int n1;
+		int n2;
+		int sum;
+		int dif;
+		int prod;
+		int quot;
+
+		system.out.print("Enter first integer: ");
+		n1 = input.nextInt();
+
+		system.out.print("Enter second integer: ");
+		n2 = input.nextInt();
+
+		sum = n1 + n2;
+		dif = n1 - n2;
+		prod = n1 * n2;
+		quot = n1 / n2;
+
+		system.out.printf("Sum is %d, Differences is %d, Product is %d, Quotient is %d", sum, dif, prod, quot);
+
+	}
+}

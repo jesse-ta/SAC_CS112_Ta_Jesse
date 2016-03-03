@@ -20,7 +20,7 @@ public class Homework4 {
 		
 		choice = input.next(); // Lets you input a choice
 
-		int vs = rand.nextInt(3)+1; // Gives a random number to be used for next 3 if statements
+		int vs = rand.nextInt(3)+1; // Gives a random number from 1-3 to be used for next 3 if statements
 		
 		if (vs == 1)
 			rock = "rock";

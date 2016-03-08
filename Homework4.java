@@ -1,7 +1,7 @@
 import java.util.Random; // Needed this to make a random number to get different results every time the game is played
 import java.util.Scanner;
 
-public class Game 
+public class Homework4 
 {
 	public static void main (String args[])
 	{

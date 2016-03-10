@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class Lab3 {
+	public static void main(String args[])
+	{
+		Scanner input = new Scanner(System.in);
+		int choice = -1;
+		Random rand = new Random();
+		int answer = rand.nextInt(300);
+		
+		System.out.println("Enter number between 0-300");
+		while (choice != answer)
+		{
+			choice = input.nextInt();
+			if (choice < answer)
+				System.out.println("Your value is less than the answer. Try again.");
+			if (choice > answer)
+				System.out.println("Your value is more than the answer. Try again.");
+			if (choice == answer)
+			{
+				System.out.println("You got the number right!");
+				break;
+			}
+		
+		}
+		
+	}
+
+}

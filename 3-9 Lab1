@@ -5,6 +5,7 @@ public class Lab1 {
 	{
 		Scanner input = new Scanner(System.in);
 		String hunger;
+		String breakfast;
 		
 		System.out.println("You are hungry.");
 		System.out.println("You get in line.");
@@ -12,7 +13,14 @@ public class Lab1 {
 		System.out.print("Are you thirsty? (yes,no) : ");
 		hunger = input.next();
 		if (hunger.equals("yes"))
-			System.out.println("You are thirsty and you buy a coke for yourself");
+		{
+			System.out.print("Did you eat breakfast this morning? (yes/no): ");
+			breakfast = input.next();
+			if (breakfast.equals("yes"))
+			System.out.println("You are thirsty and you ate breakfast so you buy yourself a diet coke");
+			else
+				System.out.println("You are hungry but you didn't eat breakfast so you buy yourself a coke.");
+		}
 		else
 			System.out.println("You aren't thirsty and you get water.");
 		System.out.println("You eat your lunch.");

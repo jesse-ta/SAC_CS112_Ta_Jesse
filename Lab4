@@ -18,10 +18,7 @@ public class Lab4 {
 			if (choice > answer)
 				System.out.println("Your value is more than the answer. Try again.");
 			if (choice == answer)
-			{
 				System.out.println("You got the number right!");
-				break;
-			}
 		
 		}
 		

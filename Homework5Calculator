@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Calculator {
+	public static void main(String[] args)
+	{
+		double number1, number2;
+		String calc;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter first number : ");
+		number1 = input.nextDouble();
+		
+		System.out.print("Enter operation : ");
+		calc = input.next();
+		
+		System.out.print("Enter second number : ");
+		number2 = input.nextDouble();
+		
+		if (calc.equals("+"))
+			System.out.println("Your answer is " + (number1 + number2));
+		if (calc.equals("-"))
+			System.out.println("Your answer is " + (number1 - number2));
+		if (calc.equals("*"))
+			System.out.println("Your answer is " + (number1 * number2));
+		if (calc.equals("/"))
+			System.out.println("Your answer is " + (number1 / number2));
+	}
+
+}

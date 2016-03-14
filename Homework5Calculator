@@ -15,15 +15,15 @@ public class Calculator {
 		
 		System.out.print("Enter second number : ");
 		number2 = input.nextDouble();
-		
+		// Updated if statements
 		if (calc.equals("+"))
-			System.out.println("Your answer is " + (number1 + number2));
+			System.out.println(number1 + " + " + number2 + " = " + (number1 + number2));
 		if (calc.equals("-"))
-			System.out.println("Your answer is " + (number1 - number2));
+			System.out.println(number1 + " - " + number2 + " = " + (number1 - number2));
 		if (calc.equals("*"))
-			System.out.println("Your answer is " + (number1 * number2));
+			System.out.println(number1 + " * " + number2 + " = " + (number1 * number2));
 		if (calc.equals("/"))
-			System.out.println("Your answer is " + (number1 / number2));
+			System.out.println(number1 + " / " + number2 + " = " + (number1 / number2));
 	}
 
 }

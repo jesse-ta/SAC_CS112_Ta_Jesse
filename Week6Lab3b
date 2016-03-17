@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Lab3short {
+	public static void main(String args[])
+	{
+		Scanner input = new Scanner(System.in);
+		int choice;
+		int answer;
+		String decide;
+		
+		answer = 1+ (int)(Math.random() * 10);
+		
+		System.out.print("Enter number between 1-10 : ");
+			choice = input.nextInt();
+			
+			decide = (choice == answer)? "correct":"incorrect";
+			if (decide.equals("incorrect"))
+			{
+				decide = (choice > answer)? "greater":"less";
+				System.out.println("Your number was " + decide + " than the answer.");
+			}
+			else
+				System.out.println("Your number was " + decide + ".");
+			System.out.println("The answer was " + answer + ".");
+	}
+
+}

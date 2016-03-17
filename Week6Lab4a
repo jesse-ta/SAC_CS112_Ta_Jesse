@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Lab4 {
+	public static void main(String args[]) {
+		Scanner input = new Scanner(System.in);
+		int choice = 0;
+		int answer;
+		answer = 1 + (int) (Math.random() * 10);
+		int play = 1;
+
+		System.out.print("Enter number between 1-10 : ");
+		while (play < 4) {
+			choice = input.nextInt();
+			if (choice < answer)
+				System.out.println("Your value is less than the answer.");
+			else if (choice > answer)
+				System.out.println("Your value is more than the answer.");
+			else {
+				System.out.println("You got the number right!");
+				play = 3;
+			}
+			play++;
+		}
+		System.out.println("The answer was " + answer + ".");
+	}
+
+}

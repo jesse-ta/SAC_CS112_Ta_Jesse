@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Lab3noif {
+	public static void main(String args[])
+	{
+		
+	Scanner input = new Scanner(System.in);
+	int choice;
+	int answer;
+	answer = 1+ (int)(Math.random() * 10);
+	
+	
+	System.out.print("Enter number between 1-10 : ");
+	
+		choice = input.nextInt();
+		
+		if (choice != answer)
+		{
+			if (choice > answer)
+				System.out.println("Your number is greater than the answer.");
+			else
+				System.out.println("Your number is less than the answer");
+
+			System.out.println("The answer was " + answer + ".");
+		}
+		else
+			System.out.println("You got the number right!");
+		
+	
+	}
+
+}

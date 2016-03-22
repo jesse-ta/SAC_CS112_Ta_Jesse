@@ -1,0 +1,50 @@
+import javax.swing.JOptionPane; // Used for the dialog windows
+
+public class Game {
+	public static void main(String[] args) {
+		int vs; // Computer's choice
+		String guess; // Player's choice
+		int play = 1; // Used to loop the game
+		String again; // Used for the choice to repeat the game
+
+		while (play != 0) {
+			guess = JOptionPane
+					.showInputDialog("Let's play rock, paper, scissors!\n Enter a choice. (rock, paper, or scissors)");
+
+			vs = (int) (Math.random() * 3); // Makes a random number from 0-2
+			if (guess.equals("rock")) {
+				if (vs == 0)
+					JOptionPane.showMessageDialog(null, "You picked rock.\nThe computer picked rock.\nYou tie.");
+				else if (vs == 1)
+					JOptionPane.showMessageDialog(null, "You picked rock.\nThe computer picked paper.\nYou lose.");
+				else
+					JOptionPane.showMessageDialog(null, "You picked rock.\nThe computer picked scissors.\nYou win!");
+			} else if (guess.equals("paper")) {
+				if (vs == 0)
+					JOptionPane.showMessageDialog(null, "You picked paper.\nThe computer picked rock.\nYou win!");
+				else if (vs == 1)
+					JOptionPane.showMessageDialog(null, "You picked paper.\nThe computer picked paper.\nYou tie.");
+				else
+					JOptionPane.showMessageDialog(null, "You picked paper.\nThe computer picked scissors.\nYou lose.");
+			} else if (guess.equals("scissors")) {
+				if (vs == 0)
+					JOptionPane.showMessageDialog(null, "You picked scissors.\nThe computer picked rock.\nYou lose.");
+				else if (vs == 1)
+					JOptionPane.showMessageDialog(null, "You picked scissors.\nThe computer picked paper.\nYou win.");
+				else
+					JOptionPane.showMessageDialog(null,
+							"You picked scissors.\nThe computer picked scissors.\nYou tie!");
+			} else
+				JOptionPane.showMessageDialog(null, "Input invalid");
+
+			again = JOptionPane.showInputDialog("Do you want to play again? (y/n)");
+			if (again.equals("n") || again.equals("no")) {
+				JOptionPane.showMessageDialog(null, "Thank you for playing!");
+				play = 0;
+			} else if (again.equals("y") || again.equals("yes"))
+				JOptionPane.showMessageDialog(null, "Starting over. Good luck!");
+			else
+				JOptionPane.showMessageDialog(null, "Invalid entry. Starting over.");
+		}
+	}
+}

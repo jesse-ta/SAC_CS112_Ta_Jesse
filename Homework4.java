@@ -1,4 +1,3 @@
-import java.util.Random; // Needed this to make a random number to get different results every time the game is played
 import java.util.Scanner;
 
 public class Homework4 
@@ -8,9 +7,9 @@ public class Homework4
 		Scanner input = new Scanner(System.in); //Scans keyboard
 		
 		String choice;
-		Random rand = new Random();
 		int count = 2;
 		int cont;
+		int vs;
 		
 		while (count > 1) // Making it loop forever!
 		{
@@ -20,7 +19,7 @@ public class Homework4
 		
 			choice = input.next(); // Lets you input a choice
 
-			int vs = rand.nextInt(3)+1; // Gives a random number from 1-3 for rock, paper, or scissor
+			vs = 1+(int)(Math.random() *3);// Gives a random number from 1-3 for rock, paper, or scissor
 		
 			System.out.println("You have entered in " + choice + ".");
 			if (choice.equals("rock")) // Set of conditions that happens if "rock" was entered in
@@ -30,12 +29,12 @@ public class Homework4
 				System.out.println("System has chosen rock.");
 				System.out.println("You have tied.");	
 				}
-				if (vs == 2)
+				else if (vs == 2)
 				{
 				System.out.println("System has chosen paper.");
 				System.out.println("You have lost...");	
 				}
-				if (vs == 3)
+				else
 				{
 				System.out.println("System has chosen scissors.");
 				System.out.println("You have won!");	
@@ -48,12 +47,12 @@ public class Homework4
 					System.out.println("System has chosen rock.");
 					System.out.println("You have won!");	
 				}
-				if (vs == 2)
+				else if (vs == 2)
 				{
 					System.out.println("System has chosen paper.");
 					System.out.println("You have tied.");	
 				}
-				if (vs == 3)
+				else
 				{
 					System.out.println("System has chosen scissors.");
 					System.out.println("You have lost...");	
@@ -66,12 +65,12 @@ public class Homework4
 					System.out.println("System has chosen rock.");
 					System.out.println("You have lost...");	
 				}
-				if (vs == 2)
+				else if (vs == 2)
 				{
 					System.out.println("System has chosen paper.");
 					System.out.println("You have won!");	
 				}
-				if (vs == 3)
+				else
 				{
 					System.out.println("System has chosen scissors.");
 					System.out.println("You have tied.");	
@@ -102,4 +101,4 @@ public class Homework4
 		}
 	}
 }
-// Good job...see notes
+

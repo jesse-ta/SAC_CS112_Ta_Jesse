@@ -102,3 +102,4 @@ public class Homework4
 	}
 }
 
+// Good job....now let's allow user to enter mixed case (Rock, rock, ROCK...)

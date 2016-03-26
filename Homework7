@@ -1,0 +1,125 @@
+import javax.swing.JOptionPane; // Used for the dialog windows
+import java.util.Arrays; // Used to make an array
+
+public class TicTacToe {
+	public static void main(String[] args) {
+		String[] i = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+		int loop = 1;
+		int loop2 = 1;
+		String choice;
+		int choice2;
+		int play = 0;
+		JOptionPane.showMessageDialog(null, "Let's play Tic Tac Toe!");
+		while (loop2 == 1) {
+			loop = 1;
+			while (loop == 1) {
+				choice = JOptionPane.showInputDialog("Player X: Input a choice.\n" + i[1] + "  |  " + i[2] + "  |  "
+						+ i[3] + "\n" + "------------\n" + i[4] + "  |  " + i[5] + "  |  " + i[6] + "\n"
+						+ "------------\n" + i[7] + "  |  " + i[8] + "  |  " + i[9]);
+				//Used this to check my parse
+				if (choice.equals("1") || choice.equals("2") || choice.equals("3") || choice.equals("4")
+						|| choice.equals("5") || choice.equals("6") || choice.equals("7") || choice.equals("8")
+						|| choice.equals("9")) {
+					choice2 = Integer.parseInt(choice);
+					//Used to check if there is an input in the location already
+					if (i[choice2].equals("x") || i[choice2].equals("o"))
+						JOptionPane.showMessageDialog(null, "Invalid entry, space taken.");
+					else {
+						i[choice2] = "x";
+						loop++;
+						//Used play to check for draw
+						play++;
+					}
+				} else
+					JOptionPane.showMessageDialog(null, "Invalid entry, try again.");
+
+				if (i[1] == i[2] && i[2] == i[3]) {
+					JOptionPane.showMessageDialog(null, "Winner!");
+					System.exit(0);
+					;
+				}
+				if (i[1] == i[4] && i[4] == i[7]) {
+					JOptionPane.showMessageDialog(null, "Winner!");
+					System.exit(0);
+				}
+				if (i[3] == i[6] && i[6] == i[9]) {
+					JOptionPane.showMessageDialog(null, "Winner!");
+					System.exit(0);
+				}
+				if (i[7] == i[8] && i[8] == i[9]) {
+					JOptionPane.showMessageDialog(null, "Winner!");
+					System.exit(0);
+				}
+				if (i[1] == i[5] && i[5] == i[9]) {
+					JOptionPane.showMessageDialog(null, "Winner!");
+					System.exit(0);
+				}
+				if (i[3] == i[5] && i[5] == i[7]) {
+					JOptionPane.showMessageDialog(null, "Winner!");
+					System.exit(0);
+				}
+				if (i[2] == i[5] && i[5] == i[8]) {
+					JOptionPane.showMessageDialog(null, "Winner!");
+					System.exit(0);
+				}
+				if (play == 5) {
+					JOptionPane.showMessageDialog(null, "It's a draw.");
+					System.exit(0);
+				}
+				loop = 1;
+				while (loop == 1) {
+					choice = JOptionPane.showInputDialog("Player O: Input a choice.\n" + i[1] + "  |  " + i[2] + "  |  "
+							+ i[3] + "\n" + "------------\n" + i[4] + "  |  " + i[5] + "  |  " + i[6] + "\n"
+							+ "------------\n" + i[7] + "  |  " + i[8] + "  |  " + i[9]);
+					//Used to check my parse
+					if (choice.equals("1") || choice.equals("2") || choice.equals("3") || choice.equals("4")
+							|| choice.equals("5") || choice.equals("6") || choice.equals("7") || choice.equals("8")
+							|| choice.equals("9")) {
+						choice2 = Integer.parseInt(choice);
+						if (i[choice2].equals("x") || i[choice2].equals("o"))
+							JOptionPane.showMessageDialog(null, "Invalid entry, space taken.");
+						else {
+							i[choice2] = "o";
+							loop++;
+
+						}
+					} else
+						JOptionPane.showMessageDialog(null, "Invalid entry, try again.");
+
+					if (i[1] == i[2] && i[2] == i[3]) {
+						JOptionPane.showMessageDialog(null, "Winner!");
+						System.exit(0);
+						;
+					}
+					if (i[1] == i[4] && i[4] == i[7]) {
+						JOptionPane.showMessageDialog(null, "Winner!");
+						System.exit(0);
+					}
+					if (i[3] == i[6] && i[6] == i[9]) {
+						JOptionPane.showMessageDialog(null, "Winner!");
+						System.exit(0);
+					}
+					if (i[7] == i[8] && i[8] == i[9]) {
+						JOptionPane.showMessageDialog(null, "Winner!");
+						System.exit(0);
+					}
+					if (i[1] == i[5] && i[5] == i[9]) {
+						JOptionPane.showMessageDialog(null, "Winner!");
+						System.exit(0);
+					}
+					if (i[3] == i[5] && i[5] == i[7]) {
+						JOptionPane.showMessageDialog(null, "Winner!");
+						System.exit(0);
+					}
+					if (i[2] == i[5] && i[5] == i[8]) {
+						JOptionPane.showMessageDialog(null, "Winner!");
+						System.exit(0);
+					}
+
+				}
+			}
+
+		}
+
+	}
+}

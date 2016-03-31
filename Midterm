@@ -1,0 +1,83 @@
+import java.util.Scanner;
+
+public class DiceMidterm {
+	public static void main(String args[]) {
+		Scanner input = new Scanner(System.in);
+		int answer;
+		String choice = "";
+		int play = 0;
+		int cont = 1;
+		int error;
+		double win = 0;
+		double lose = 0;
+		double ratio = 0;
+		double evenGuess=0;
+		double oddGuess=0;
+		double cpuEven=0;
+		double cpuOdd=0;
+		
+
+		while (cont == 1) {
+			System.out.println("Rolling a die. Guess odd or even! What is your guess?");
+			answer = 1 + (int) (Math.random() * 6);
+			error = 0;
+			while (error == 0) {
+				
+				choice = input.next();
+				if (choice.equals("even")) {
+					if (answer == 2 || answer == 4 || answer == 6) {
+						System.out.println("The computer rolled a " + answer + ". You win!");
+						win++;
+						error++;
+						cpuEven++;
+					} else {
+						System.out.println("The computer rolled a " + answer + ". You lose...");
+						lose++;
+						error++;
+						cpuOdd++;
+					}
+					evenGuess++;
+				} else if (choice.equals("odd")) {
+					if (answer == 1 || answer == 3 || answer == 5) {
+						System.out.println("The computer rolled a " + answer + ". You win!");
+						win++;
+						error++;
+						cpuOdd++;
+					} else {
+						System.out.println("The computer rolled a " + answer + ". You lose...");
+						lose++;
+						error++;
+						cpuEven++;
+					}
+					oddGuess++;
+
+				} else
+					System.out.println("Error, invalid choice");
+			}
+			play++;
+			System.out.println("Current wins : " + win + ". Current losses : " + lose + ".");
+			ratio = lose / win;
+			System.out.println("Current win ratio : " + (ratio/play)*100 + ".");
+			System.out.println("Current even guess percentage : " + (evenGuess/play)*100 + ".");
+			System.out.println("Current CPU odd guess percentage : " + (cpuOdd/play)*100 + ".");
+
+			System.out.print("Do you want to play again? y/n: ");
+			while (error == 1) {
+				choice = input.next();
+				if (choice.equals("y") || choice.equals("yes")) {
+					System.out.println("Playing again! Goodluck!");
+					error++;
+
+				} else if (choice.equals("n") || choice.equals("no")) {
+					System.out.println("Ending game, thank you.");
+					error++;
+					cont++;
+				} else
+					System.out.print("Invalid entry, try again (y/n) : ");
+
+			}
+			
+			System.out.println("Current times played : " + play);
+		}
+	}
+}

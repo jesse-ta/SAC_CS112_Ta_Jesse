@@ -1,0 +1,53 @@
+import java.util.Scanner;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import javax.swing.JOptionPane;
+
+public class Lab1Week8 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String name;
+		int birthYear;
+		int age;
+		int ageCalc;
+		int drink;
+		int legalAge;
+		DateFormat df = new SimpleDateFormat("yyyy");
+		Date time = new Date();
+		int i = 0;
+		String choice;
+		
+		while (i == 0)
+		{
+			System.out.print("Enter in your name : ");
+			name = input.next();
+			System.out.print("Enter in your birth year : ");
+			birthYear = input.nextInt();
+			ageCalc = Integer.parseInt(df.format(time));
+			age = ageCalc - birthYear;
+			System.out.println("Hello, " + name + ", you're " + age + " years old this year!");
+			if (age < 21) {
+
+				legalAge = ageCalc + (21 - age);
+				drink = legalAge - ageCalc;
+				System.out.println("You are a minor. You are able to purchase alcohol in " + drink
+						+ " years, in the year " + legalAge + ".");
+			} else
+				System.out.println("You are an adult. Drink all you want.");
+			System.out.print("Do you want to continue? y/n : ");
+			choice = input.next();
+			if (choice.equals("n"))
+			{
+				i++;
+				System.out.println("Ending program.");
+			}
+			else
+				System.out.println("Starting over.");
+				
+		}
+	}
+}

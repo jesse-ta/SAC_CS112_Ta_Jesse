@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class HomeworkWeek9 {
+
+	public static void main(String args[]) {
+		String choice;
+		int answer;
+		Scanner input = new Scanner(System.in);
+
+		System.out.print("Playing odd or even game! Enter in your choice (odd/even) : ");
+		choice = input.next();
+		answer = 1 + (int) (Math.random() * 2);
+		
+		//Goes to the OddEvenGame
+		OddEvenGame Start = new OddEvenGame(choice, answer);
+	}
+}
+//Sorry, I wasn't able to make it to class last week due to an illness.

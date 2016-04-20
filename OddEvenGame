@@ -1,0 +1,17 @@
+//Odd and even game, Used with HomeworkWeek9.
+public class OddEvenGame {
+	public OddEvenGame(String choice2, int answer2) {
+		if (choice2.equals("odd"))
+			if (answer2 == 1)
+				System.out.print("You have chose correctly.");
+			else
+				System.out.print("You have chose incorrectly.");
+		else if (choice2.equals("even"))
+			if  (answer2 == 1)
+				System.out.print("You have chose incorrectly.");
+			else
+				System.out.print("You have chose correctly.");
+		else
+			System.out.print("Bad choice.");
+	}
+}

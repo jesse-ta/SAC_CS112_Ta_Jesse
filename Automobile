@@ -1,0 +1,36 @@
+
+public class Automobile {
+	private int doors;
+	private int cylinders;
+	private int trans;
+	private String color;
+	private String name;
+	
+	public void SetNumberOfDoors(int d)
+	{
+		doors = d;
+	}
+	public void SetNumberOfCylinders(int c)
+	{
+		cylinders = c;
+	}
+	public void SetTransmission(int t)
+	{
+		trans = t;
+	}
+	public void SetColor(String c)
+	{
+		color = c;
+	}
+	public void SetName(String n)
+	{
+		name = n;
+	}
+	public String About()
+	{
+		String description;
+		description = String.format("A %s %d door named %s with %d cylinders and %d number of gears",color,doors,name,cylinders,trans);
+		return description;
+	}
+
+}

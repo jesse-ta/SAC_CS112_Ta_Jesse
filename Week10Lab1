@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class GuessGame2 {
+
+public static void main(String[] args) {
+
+Scanner input = new Scanner (System.in);
+
+RandomNumber randomNum = new RandomNumber();
+int number1;
+
+System.out.print("Please enter a number between 1 and 10: ");
+number1= input.nextInt();
+
+if (number1==RandomNumber.RandomNumber())
+System.out.printf("Congrats, you guessed it. The correct number is %f\n",
+randomNum);
+else if (number1 > RandomNumber.RandomNumber())
+System.out.println("Your number is too large.");
+else
+System.out.println("Your number is too small.");
+
+}
+}

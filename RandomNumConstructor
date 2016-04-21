@@ -1,0 +1,21 @@
+
+public class RandomNumber 
+{
+	
+	private int max=0;
+	private int min=0;
+	private int num=0;
+	
+	public RandomNumber(int high,int low)
+	{
+		max= high;
+		min= low;
+	}
+	
+	public int GetANumber(int hi,int low)
+	{
+		num = low+(int)(Math.random() * (hi-low));
+		return num;
+	}
+
+}

@@ -1,0 +1,12 @@
+
+public class RandomNumber 
+{
+	public static int RandomNumber()
+	{
+		
+		int randomNumber = (int)(Math.random() * 10);
+		
+		return randomNumber;
+	}
+
+}

@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class GuessGame2 {
+	
+
+public static void main(String[] args) {
+
+Scanner input = new Scanner (System.in);
+int number1;
+int highNumber;
+int lowNumber;
+int myNum=0;
+
+System.out.print("Enter in low number : ");
+lowNumber = input.nextInt();
+System.out.print("Enter in high number : ");
+highNumber = input.nextInt();
+
+RandomNumber myRandomNum = new RandomNumber(highNumber, lowNumber);
+
+myNum=myRandomNum.GetANumber(highNumber,lowNumber);
+
+System.out.print(myNum);
+
+System.out.print("Please enter a number between "+ lowNumber+" and "+ highNumber + " : ");
+number1= input.nextInt();
+
+if (number1==myNum)
+System.out.printf("Congrats, you guessed it.");
+else if (number1 > myNum)
+System.out.println("Your number is too large.");
+else
+System.out.println("Your number is too small.");
+
+}
+}
+

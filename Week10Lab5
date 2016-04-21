@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Week10Lab5 {
+	public static void main (String[] args)
+	{
+		Automobile Cabbie = new Automobile();
+		Cabbie.SetNumberOfDoors(4);
+		Cabbie.SetNumberOfCylinders(4);
+		Cabbie.SetTransmission(5);
+		Cabbie.SetColor("Yellow");
+		Cabbie.SetName("Cabbie");
+		System.out.println(Cabbie.About());
+
+		Automobile Sporty = new Automobile();
+		Sporty.SetNumberOfDoors(2);
+		Sporty.SetNumberOfCylinders(8);
+		Sporty.SetTransmission(7);
+		Sporty.SetColor("Red");
+		Sporty.SetName("Sporty");
+		System.out.println(Sporty.About());
+
+		Automobile Vany = new Automobile();
+		Vany.SetNumberOfDoors(5);
+		Vany.SetNumberOfCylinders(6);
+		Vany.SetTransmission(6);
+		Vany.SetColor("Green");
+		Vany.SetName("Vany");
+		System.out.println(Vany.About());
+
+	}
+	
+
+}

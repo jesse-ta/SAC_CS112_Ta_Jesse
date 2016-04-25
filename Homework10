@@ -1,0 +1,46 @@
+//start of the main program
+import java.util.Scanner;
+public class MainProgram {
+	public static void main (String args[])
+	{
+		int dice;
+		int guess;
+		int system;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Please enter how many dice to roll : ");
+		dice = input.nextInt();
+		Side Start = new Side(dice);
+		system = Start.diceRoll();
+		System.out.print("What is your guess? (from " + dice + " to " + 6*dice + ") : ");
+		guess = input.nextInt();
+		Start.playGame(guess, system);
+	}
+}
+//end of the main program
+
+
+
+//start of the side program
+public class Side {
+	private int dice;
+	private int answer;
+	public Side (int diceAmt) //constructor
+	{
+		dice = diceAmt;
+	}
+	public int diceRoll() //creates the random number between how many dice are being used
+	{
+		answer = dice+(int)(Math.random() *(6*dice)-(dice-1));
+		return answer;
+	}
+	public void playGame(int player, int cpu) //used to compare cpu vs player choices
+	{
+		System.out.printf("You picked %d. The system picked %d.\n", player, cpu);
+		if (player == cpu)
+			System.out.print("You guessed correctly!");
+		else
+			System.out.print("You guessed wrong!");
+	}
+}
+//end of the side program

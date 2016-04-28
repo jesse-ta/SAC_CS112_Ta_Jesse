@@ -1,0 +1,16 @@
+
+public class DiceMain {
+	public static void main (String[] args){
+		System.out.println(Dice.OneThrow());
+	}
+}
+//end of main
+
+
+public class Dice {
+	private static int randomNum;
+	public static int OneThrow(){
+		randomNum = 1+(int)(Math.random() *6);
+		return randomNum;
+	}
+}

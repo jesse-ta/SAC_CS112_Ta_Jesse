@@ -65,7 +65,7 @@ public class Automobile {
 	public String About()
 	{
 		String description;
-		description = String.format("A %s %d door named %s with %d cylinders and %d number of gears.",color,doors,name,cylinders,trans);
+			description = String.format("%s, %d door, %s, %d cylinders, %d-speed.",color,doors,name,cylinders,trans);
 		return description;
 	}
 

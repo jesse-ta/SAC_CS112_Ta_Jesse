@@ -32,7 +32,6 @@ public class Automobile {
 		doors = dr;
 		cylinders = cyl;
 	}
-	
 	public Automobile (int dr, int cyl, int tran) //constructor with 3
 	{
 		doors = dr;
@@ -46,7 +45,6 @@ public class Automobile {
 		cylinders = cyl;
 		trans = tran;
 	}
-	
 	public void SetNumberOfDoors(int d)
 	{
 		doors = d;
@@ -73,5 +71,4 @@ public class Automobile {
 		description = String.format("%s, %d door, %s, %d cylinders, %d-speed gear box.",color,doors,name,cylinders,trans);
 		return description;
 	}
-
 }

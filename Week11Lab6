@@ -1,0 +1,72 @@
+public class Week10Lab5 {
+	public static void main (String[] args)
+	{
+		Automobile Cabbie = new Automobile(4,4);
+		Cabbie.SetTransmission(5);
+		Cabbie.SetColor("Yellow");
+		Cabbie.SetName("Cabbie");
+		System.out.println(Cabbie.About());
+
+		Automobile Sporty = new Automobile(2,8,7);
+		Sporty.SetColor("Red");
+		Sporty.SetName("Sporty");
+		System.out.println(Sporty.About());
+
+		Automobile Vany = new Automobile(5,6);
+		Vany.SetTransmission(6);
+		Vany.SetColor("Green");
+		Vany.SetName("Vany");
+		System.out.println(Vany.About());
+	}
+}
+//end of main
+
+
+public class Automobile {
+	private int doors;
+	private int cylinders;
+	private int trans;
+	private String color;
+	private String name;
+	
+	public Automobile (int dr, int cyl)
+	{
+		doors = dr;
+		cylinders = cyl;
+	}
+	
+	public Automobile (int dr, int cyl, int tran)
+	{
+		doors = dr;
+		cylinders = cyl;
+		trans = tran;
+	}
+	
+	public void SetNumberOfDoors(int d)
+	{
+		doors = d;
+	}
+	public void SetNumberOfCylinders(int c)
+	{
+		cylinders = c;
+	}
+	public void SetTransmission(int t)
+	{
+		trans = t;
+	}
+	public void SetColor(String c)
+	{
+		color = c;
+	}
+	public void SetName(String n)
+	{
+		name = n;
+	}
+	public String About()
+	{
+		String description;
+		description = String.format("A %s %d door named %s with %d cylinders and %d number of gears.",color,doors,name,cylinders,trans);
+		return description;
+	}
+
+}

@@ -1,0 +1,82 @@
+public class Week10Lab5 {
+	public static void main (String[] args)
+	{
+		Automobile Cabbie = new Automobile("Cabbie","Yellow",4,4,5);
+		System.out.println(Cabbie.About());
+
+		Automobile Sporty = new Automobile("Sporty", "Red", 2,8,7);
+		System.out.println(Sporty.About());
+
+		Automobile Vany = new Automobile(5,6);
+		Vany.SetTransmission(6);
+		Vany.SetColor("Green");
+		Vany.SetName("Vany");
+		System.out.println(Vany.About());
+	}
+}
+//end of main
+
+
+public class Automobile {
+	private int doors;
+	private int cylinders;
+	private int trans;
+	private String color;
+	private String name;
+	
+	public Automobile (int dr, int cyl)  //constructor with 2
+	{
+		doors = dr;
+		cylinders = cyl;
+	}
+	
+	public Automobile (int dr, int cyl, int tran) //constructor with 3
+	{
+		doors = dr;
+		cylinders = cyl;
+		trans = tran;
+	}
+	public Automobile (String clr, int dr, int cyl, int tran) //constructor with 4
+	{
+		color = clr;
+		doors = dr;
+		cylinders = cyl;
+		trans = tran;
+	}
+	public Automobile (String nm, String clr, int dr, int cyl, int tran) //constructor with 5
+	{
+		color = clr;
+		doors = dr;
+		cylinders = cyl;
+		trans = tran;
+		name = nm;
+	}
+	
+	public void SetNumberOfDoors(int d)
+	{
+		doors = d;
+	}
+	public void SetNumberOfCylinders(int c)
+	{
+		cylinders = c;
+	}
+	public void SetTransmission(int t)
+	{
+		trans = t;
+	}
+	public void SetColor(String c)
+	{
+		color = c;
+	}
+	public void SetName(String n)
+	{
+		name = n;
+	}
+	public String About()
+	{
+		String description;
+		description = String.format("%s, %d door, %s, %d cylinders, %d-speed gear box.",color,doors,name,cylinders,trans);
+		return description;
+	}
+
+}

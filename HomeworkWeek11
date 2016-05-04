@@ -51,3 +51,5 @@ public class DiceSub {
 		}
 	}
 }
+
+// Good job...now let's see if you can implement toString

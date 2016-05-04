@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class DiceMain {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String choice;
+		int loop = 1;
+
+		DiceSub Start = new DiceSub();
+		while (loop == 1) {
+			System.out.print("Enter in command (throw, history, exit) : ");
+			choice = input.next();
+			if (choice.equals("throw"))
+				System.out.println(Start.OneThrow());
+			else if (choice.equals("history")) {
+				System.out.println("Showing History...");
+				Start.History();
+			} else if (choice.equals("exit")) {
+				System.out.println("Goodbye.");
+				break;
+			} else
+				System.out.println("Invalid entry.");
+		}
+	}
+}
+//end of main
+
+public class DiceSub {
+	private int randomNum;
+	private int[] numStore;
+	private int counter = 0;
+	private int historyCounter;
+
+	public DiceSub() { // constructor to make array that stores history
+		numStore = new int[100];
+	}
+
+	public int OneThrow() { // throws a random dice number and keeps count
+		randomNum = 1 + (int) (Math.random() * 6);
+		numStore[counter] = randomNum;
+		counter++;
+		System.out.print("Throw #" + counter + " is ");
+		return randomNum;
+	}
+
+	public void History() { // shows history
+		historyCounter = counter - 1;
+		while (historyCounter > -1) {
+			System.out.println("Throw " + (historyCounter + 1) + " was " + numStore[historyCounter] + ".");
+			historyCounter--;
+		}
+	}
+}

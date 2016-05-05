@@ -12,8 +12,8 @@ public class Dice {
 	private static int randomNum;
 	private static int roll;
 	private static int count;
-	public static int OneThrow(){
-		randomNum = 1+(int)(Math.random() *6);
+	public static int OneThrow(int dices){
+		randomNum = dices+(int)(Math.random() *(6*dices)-(1-dices));
 		return randomNum;
 	}
 	public static int OneThrow(int dices, int bounces){

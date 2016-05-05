@@ -5,7 +5,7 @@ public class Test2Question1 {
 		Scanner input = new Scanner(System.in);
 		System.out.print("How many dice do you want to throw? : ");
 		choice = input.nextInt();
-		System.out.println("You have rolled a total of " + Dice.OneThrow(choice));
+		System.out.println("You have rolled a total of " + Test2Question1side.OneThrow(choice));
 	}
 }
 //end of main

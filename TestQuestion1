@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Test2Question1 {
+	public static void main (String[] args){
+		int choice;
+		Scanner input = new Scanner(System.in);
+		System.out.print("How many dice do you want to throw? : ");
+		choice = input.nextInt();
+		System.out.println("You have rolled a total of " + Dice.OneThrow(choice));
+	}
+}
+//end of main
+
+
+public class Test2Question1side {
+	private static int randomNum;
+	public static int OneThrow(int dices){
+		randomNum = dices+(int)(Math.random() *(6*dices)-(1-dices));
+		return randomNum;
+	}
+}

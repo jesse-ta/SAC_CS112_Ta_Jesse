@@ -1,0 +1,91 @@
+import java.util.Scanner;
+public class Test2Question2 {
+	public static void main (String[] args){
+	int choice;
+	String choice2;
+	Scanner input = new Scanner(System.in);
+	Test2Question2side car = new Test2Question2side();
+	
+	System.out.print("Enter in your car year : ");
+	choice = input.nextInt();
+	car.CarYear(choice);
+	System.out.print("Enter in your car make : ");
+	choice2 = input.next();
+	car.CarMake(choice2);
+	System.out.print("Enter in your car model : ");
+	choice2 = input.next();
+	car.CarModel(choice2);
+	System.out.print("Enter in your car color : ");
+	choice2 = input.next();
+	car.SetColor(choice2);
+	System.out.print("Enter in your car name : ");
+	choice2 = input.next();
+	car.SetName(choice2);
+	System.out.print("Enter in your car gears : ");
+	choice = input.nextInt();
+	car.CarGears(choice);
+	System.out.print("Select your operating cycle : ");
+	choice = input.nextInt();
+	car.CarCycles(choice);
+	System.out.print("Enter in your current gear : ");
+	choice = input.nextInt();
+	car.CurrentGear(choice);
+	System.out.println("Your current speed is " + car.speed());
+	System.out.println("The distance you traveled was " + car.distance());
+	}
+}
+//end of main
+
+
+public class Test2Question2side {
+	private int year;
+	private String make;
+	private String model;
+	private String color;
+	private String name;
+	private int gears;
+	private int cycles;
+	private int currentGear;
+	private int counter;
+	private int totalDistance;
+	private int currentCycle;
+	
+	public void CarYear(int y){
+		year = y;
+	}
+	public void CarMake(String m){
+		make = m;
+	}
+	public void CarModel(String mode){
+		model = mode;
+	}
+	public void CarGears(int g){
+		gears = g;
+	}
+	public void SetColor(String c)
+	{
+		color = c;
+	}
+	public void SetName(String n)
+	{
+		name = n;
+	}
+	public void CarCycles(int c){
+		cycles = c;
+	}
+	public void CurrentGear(int x){
+		currentGear=x;
+	}
+	public int speed(){
+		return currentGear*10;
+	}
+	public int distance(){
+		counter = cycles;
+		while (counter !=0){
+			currentCycle = (currentGear*10)/60;
+			totalDistance = totalDistance + currentCycle;
+			counter--;
+		}
+		return totalDistance;
+	}
+}

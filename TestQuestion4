@@ -1,0 +1,151 @@
+import java.util.Scanner;
+
+public class Test2Question3 {
+	public static void main (String[] args)
+	{
+		int choice;
+		String choice2;
+		Scanner input = new Scanner(System.in);
+		Test2Question2side Truck = new Test2Question2side(3);
+		System.out.print("Enter in your car year : ");
+		choice = input.nextInt();
+		Truck.CarYear(choice);
+		System.out.print("Enter in your car make : ");
+		choice2 = input.next();
+		Truck.CarMake(choice2);
+		System.out.print("Enter in your car model : ");
+		choice2 = input.next();
+		Truck.CarModel(choice2);
+		System.out.print("Enter in your car color : ");
+		choice2 = input.next();
+		Truck.SetColor(choice2);
+		System.out.print("Enter in your car name : ");
+		choice2 = input.next();
+		Truck.SetName(choice2);
+		System.out.print("Enter how many dice to roll : ");
+		choice = input.nextInt();
+		Truck.CarCycles(choice);
+		Truck.CurrentGear(choice);
+		
+		System.out.println("Your current speed is " + Truck.speed());
+		System.out.println("The distance you traveled was " + Truck.distance() + "miles.");
+		
+		Test2Question2side Van = new Test2Question2side(4);
+		System.out.print("Enter in your car year : ");
+		choice = input.nextInt();
+		Van.CarYear(choice);
+		System.out.print("Enter in your car make : ");
+		choice2 = input.next();
+		Van.CarMake(choice2);
+		System.out.print("Enter in your car model : ");
+		choice2 = input.next();
+		Van.CarModel(choice2);
+		System.out.print("Enter in your car color : ");
+		choice2 = input.next();
+		Van.SetColor(choice2);
+		System.out.print("Enter in your car name : ");
+		choice2 = input.next();
+		Van.SetName(choice2);
+		System.out.print("Enter how many dice to roll : ");
+		choice = input.nextInt();
+		Van.CarCycles(choice);
+		Van.CurrentGear(choice);
+
+		System.out.println("Your current speed is " + Van.speed());
+		System.out.println("The distance you traveled was " + Van.distance() + "miles.");
+
+		Test2Question2side Sport = new Test2Question2side(6);
+		System.out.print("Enter in your car year : ");
+		choice = input.nextInt();
+		Sport.CarYear(choice);
+		System.out.print("Enter in your car make : ");
+		choice2 = input.next();
+		Sport.CarMake(choice2);
+		System.out.print("Enter in your car model : ");
+		choice2 = input.next();
+		Sport.CarModel(choice2);
+		System.out.print("Enter in your car color : ");
+		choice2 = input.next();
+		Sport.SetColor(choice2);
+		System.out.print("Enter in your car name : ");
+		choice2 = input.next();
+		Sport.SetName(choice2);
+		System.out.print("Enter how many dice to roll : ");
+		choice = input.nextInt();
+		Sport.CarCycles(choice);
+		Sport.CurrentGear(choice);
+
+		System.out.println("Your current speed is " + Sport.speed());
+		System.out.println("The distance you traveled was " + Sport.distance() + "miles.");
+
+	}
+}
+//end of main
+
+
+public class Test2Question2side {
+	private int year;
+	private String make;
+	private String model;
+	private String color;
+	private String name;
+	private int gears;
+	private int cycles;
+	private int currentGear;
+	private int counter;
+	private int totalDistance;
+	private int currentCycle;
+	
+	public Test2Question2side(int g) { //constructor
+		gears = g;
+	}
+	public void CarYear(int y){
+		year = y;
+	}
+	public void CarMake(String m){
+		make = m;
+	}
+	public void CarModel(String mode){
+		model = mode;
+	}
+	//public void CarGears(int g){  not needed for this question
+		//gears = g;
+	//}
+	public void SetColor(String c)
+	{
+		color = c;
+	}
+	public void SetName(String n)
+	{
+		name = n;
+	}
+	public void CarCycles(int x){
+		cycles = Test2Question1side.OneThrow(x);
+	}
+	public void CurrentGear(int x){
+		currentGear=Test2Question1side.OneThrow(x);
+	}
+	public int speed(){
+		return currentGear*10;
+	}
+	public int distance(){
+		counter = cycles;
+		while (counter !=0){
+			currentCycle = (currentGear*10)/60;
+			totalDistance = totalDistance + currentCycle;
+			counter--;
+		}
+		return totalDistance;
+	}
+}
+//end of auto
+
+
+public class Test2Question1side {
+	private static int randomNum;
+	public static int OneThrow(int dices){
+		randomNum = dices+(int)(Math.random() *(6*dices)-(1-dices));
+		return randomNum;
+	}
+}
+//end of dice
